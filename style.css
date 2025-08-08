@@ -1,0 +1,234 @@
+:root {
+  --arctic: #00A8E8;
+  --lightbluegrey: #E2EAEC;
+}
+*,
+*::before, 
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.5;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 1fr 5fr;
+  grid-template-areas: 
+  "sidebar header"
+  "sidebar main-content";
+  
+  border: 1px solid black;
+  /* vh is responsive for all devices, might switch this by media query when screen gets smaller */
+  height: 100vh;
+}
+
+.sidebar {
+  display: grid;
+  background-color: var(--arctic);
+  font-weight: bold;
+  color: white;
+  grid-area: sidebar;
+  /* this represents not the content, but the lines in which the contents should be */
+  grid-template-rows: 1fr 3fr 5fr ;
+  gap: 2rem;
+  padding: 2rem;
+  box-shadow: 2px 0px 5px lightgrey;
+}
+
+
+.header {
+  display: grid;
+  grid-area: header;
+  grid-template-areas: 
+  "system-header"
+  "user-header";
+  grid-template-rows: 1fr 1fr;
+  box-shadow: 0px 2px 5px lightgrey;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.header .system-header {
+  display: grid;
+  grid-area: system-header;
+  grid-template-columns: 3fr 1fr 1fr;
+}
+
+.header .user-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-area: user-header;
+  align-content: center;
+  align-items: center;
+}
+
+.user-commands {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.user-commands button {
+  background-color: var(--arctic);
+  border: none;
+  padding: 0.7rem;
+  border-radius: 1.5rem;
+  color: white; 
+}
+
+.search-bar input {
+  min-width: 0;
+  width: 100%;
+  border-radius: 9px;
+  background-color: var(--lightbluegrey);
+  border: none;
+  padding: 0.2rem 0.4rem;
+
+
+}
+
+.main-content {
+  display: grid;
+  grid-template-areas: 
+    "your-projects announcements"
+    "your-projects trending";
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr; 
+  grid-area: main-content;
+  padding: 0.8rem;
+  background-color: var(--lightbluegrey);
+  overflow: scroll;
+}
+ .project-list {
+   display: grid;
+   grid-area: project-list;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 2rem;
+ }
+
+ .your-projects {
+   display: grid;
+   grid-area: your-projects;
+   /* allocate small space for .project-label */
+   grid-template-rows: 0.2fr;
+   grid-template-areas: 
+    "your-projects-label"
+    "project-list";
+ }
+
+ .your-projects, .announcements, .trending {
+   padding: 0.5rem 1rem;
+   gap: 0.5rem;
+ }
+
+
+ /*project-label*/
+ .your-projects .your-projects-label {
+   grid-area: your-projects-label;
+ }
+
+ .your-projects-label, .announcements-label, .trending {
+   align-self: start;
+ }
+
+
+ /* every element that has a white box */
+ .project, ul.announcements-list, ul.trending-list {
+   padding: 1rem;
+   background-color: white;
+   box-shadow: 2px 2px 2px lightgrey;
+   border-radius: 0.5rem;
+ }
+
+ ul.trending-list {
+   
+ }
+
+ .project {
+   display: grid;
+   grid-template-rows: 1fr 4fr;
+   align-content: start;
+   align-items: start;
+   position: relative;
+   border-left: 0.5rem orange solid;
+ }
+
+
+ .user-commands button {
+   color: white;
+   font-weight: bold;
+ }
+ 
+ .project-actions {
+   position: absolute;
+   bottom: 1rem;
+   right: 1rem;
+ }
+ 
+ .announcements {
+   display: grid;
+   grid-template-rows: 0.2fr;
+   grid-area: announcements;
+   grid-template-areas:
+    "announcements-label"
+    "announcements-list";
+ }
+
+.announcements .announcements-label {
+  grid-area: announcements-label;
+}
+
+ ul.announcements-list {
+   padding: 1.5rem;
+  grid-area: announcements-list;
+
+  /* multiline with ellipsis */
+    & p {
+      width: 100%;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+ }
+
+ ul.announcements-list li {
+   padding: 1rem;
+ }
+
+ ul.announcements-list li + li{
+   border-top: 1px solid lightgrey;
+ }
+
+ li:last-child {
+   padding-bottom: 2rem;
+ }
+
+
+ .trending {
+   display: grid;
+   grid-template-rows: 0.2fr;
+   grid-area: trending;
+   grid-template-areas:
+    "trending-label" 
+    "trending-list";
+ }
+
+.trending .trending-label {
+  grid-area: trending-label;
+}
+ul.trending-list {
+  grid-area: trending-list; 
+}
+
+
+li {
+  list-style-type: none;
+}

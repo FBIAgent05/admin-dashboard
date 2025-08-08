@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>The Odin Project: Admin Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
   
   <div class="main-grid">
     <div class="sidebar">
-      <div class="logo"></div>
+      <h2 class="logo">Dashboard</h2>
       <nav class="user-nav">
         <ul>
           <li class="home">Home</li>
@@ -32,12 +33,17 @@
 
     <div class="header">
       <div class="system-header">
-        <div class="search"></div>
+        <div class="search-bar">
+          <input type="text" name="search" value="">
+        </div>
         <div class="notifs"></div>
-        <div class="username"></div>
+        <div class="username">Morgan Oakley</div>
       </div>
       <div class="user-header">
-        <div class="greet-user"></div>
+        <div class="greet-user">
+          <small>Hi there,</small>
+          <h1>Morgan Oakley (@morgan)</h1>
+        </div>
         <div class="user-commands">
           <button class="new">New</button>   
           <button class="upload">Upload</button>
@@ -48,8 +54,11 @@
 
     <div class="main-content">
       <div class="your-projects">
+        <h3 class="your-projects-label">Your Projects</h3>
+        <div class="project-list"> 
         <div class="project">
-          <div class="project-content"></div>
+          <h4 class="project-title">Super Cool Project</h4>
+          <div class="project-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
           <!--flex-->
           <div class="project-actions">
             <button class="project-actions-btn favorite"></button>
@@ -58,7 +67,8 @@
           </div>
         </div>
         <div class="project">
-          <div class="project-content"></div>
+          <h4 class="project-title">Less Cool Project</h4>
+          <div class="project-content">Phasellus fermentum malesuada phasellus netus dictum aenean placerat egestas amet. Ornare taciti semper dolor tristique morbi.</div>
           <!--flex-->
           <div class="project-actions">
             <button class="project-actions-btn favorite"></button>
@@ -68,7 +78,8 @@
 
         </div>
         <div class="project">
-          <div class="project-content"></div>
+          <h4 class="project-title">Impossible App</h4>
+          <div class="project-content">Curabitur semper venenatis lectus viverra ex dictumst nulla maximus. Primis iaculis elementum conubia feugiat venenatis dolor augue ac blandit nullam ac phasellus turpis feugiat mollis.</div>
           <!--flex-->
           <div class="project-actions">
             <button class="project-actions-btn favorite"></button>
@@ -77,7 +88,8 @@
           </div>
         </div>
         <div class="project">
-          <div class="project-content"></div>
+          <h4 class="project-title">Easy Peasy App</h2>
+          <div class="project-content">Vehicula etiam elementum finibus enim duis feugiat commodo adipiscing tortor tempor elit. Et mollis consectetur habitant turpis tortor consectetur adipiscing.</div>
           <!--flex-->
           <div class="project-actions">
             <button class="project-actions-btn favorite"></button>
@@ -87,7 +99,10 @@
         </div>
 
          <div class="project">
-          <div class="project-content"></div>
+          <h4 class="project-title">Ad Blocker</h4>
+          <div class="project-content">
+Faucibus ac ex ligula neque faucibus donec. Nec sagittis venenatis consequat vestibulum vestibulum ultricies pharetra arcu sem tempus dignissim congue libero dui.
+        </div>
           <!--flex-->
           <div class="project-actions">
             <button class="project-actions-btn favorite"></button>
@@ -97,7 +112,8 @@
 
         </div>
           <div class="project">
-          <div class="project-content"></div>
+          <h4 class="project-title">Money Maker</h4>
+          <div class="project-content">Elementum consequat eleifend malesuada hac interdum nisl sem lacinia. Dui aliquet proin litora non nulla egestas vehicula tortor sem ultricies iaculis sodales.</div>
           <!--flex-->
           <div class="project-actions">
             <button class="project-actions-btn favorite"></button>
@@ -105,16 +121,29 @@
             <button class="project-actions-btn branch"></button>
           </div>
         </div>
+        </div>
       </div>
 
       <div class="announcements">    
-        <ul class="announcement-list"> 
-          <li></li>
-          <li></li>
-          <li></li>
+        <h3 class="announcements-label">Announcements</h3>
+        <ul class="announcements-list"> 
+          <li>
+            <h4>Site Maintenance</h4>
+            <p>Vehicula etiam elementum finibus enim duis feugiat commodo adipiscing tortor tempor elit. Et mollis consectetur habitant turpis tortor consectetur</p>
+          </li>
+          <li>
+            <h4>Community Share Day</h4>
+            <p>Vehicula etiam elementum finibus enim duis feugiat commodo adipiscing tortor tempor elit. Et mollis consectetur habitant turpis tortor consectetur</p>
+          </li>
+          <li>
+            <h4>Updated Privacy Policy</h4>
+            <p>Phasellus fermentum malesuada phasellus netus dictum aenean placerat egestas amet. Ornare taciti semper dolor tristique morbi.</p>
+          </li>
+
         </ul>
       </div>
       <div class="trending">
+        <h3 class="trending-label">Trending</h3>
         <ul class="trending-list">
           <li></li>
           <li></li>
