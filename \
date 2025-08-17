@@ -1,7 +1,6 @@
 :root {
   --arctic: #00A8E8;
   --lightbluegrey: #E2EAEC;
-  --grey-filter: brightness(0) saturate(100%) invert(41%) sepia(7%) saturate(443%) hue-rotate(214deg) brightness(84%) contrast(89%);
 }
 *,
 *::before, 
@@ -18,7 +17,7 @@ body {
 .main-grid {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 7fr;
+  grid-template-rows: 1fr 5fr;
   grid-template-areas: 
   "sidebar header"
   "sidebar main-content";
@@ -50,7 +49,7 @@ body {
   "user-header";
   grid-template-rows: 1fr 1fr;
   box-shadow: 0px 2px 5px lightgrey;
-  padding: 0.8rem 1.5rem;
+  padding: 2rem;
   z-index: 1;
 }
 
@@ -94,57 +93,13 @@ body {
 
 /* add image using css */
 /* ::before and :before are the same */
-.username:before, .greet-user:before {
+.username:before {
   display: inline-block;
+  width: 4rem;
+  height: 4rem;
   content: "";
   background: url('https://cdn-icons-png.flaticon.com/512/3025/3025567.png') no-repeat 0 0;
   background-size: 100%;
-}
-
-.username:before {
-  width: 4rem;
-  height: 4rem;
-}
-.greet-user:before {
-  width: 7rem;
-  height: 7rem;
-}
-
-.project-actions {
- display: flex; 
- column-gap: 1.5rem;
-}
-
-.project-actions-btn {
-  border: none;
-  background-color: transparent;
-  width: 1.5rem;
-  height: 1.5rem;
-  filter: var(--grey-filter);
-}
-.favorite {
-  background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M5.8%2021L7.4%2014L2%209.2L9.2%208.6L12%202L14.8%208.6L22%209.2L18.8%2012H18C17.3%2012%2016.6%2012.1%2015.9%2012.4L18.1%2010.5L13.7%2010.1L12%206.1L10.3%2010.1L5.9%2010.5L9.2%2013.4L8.2%2017.7L12%2015.4L12.5%2015.7C12.3%2016.2%2012.1%2016.8%2012.1%2017.3L5.8%2021M17%2014V17H14V19H17V22H19V19H22V17H19V14H17Z%22%20%2F%3E%3C%2Fsvg%3E');
-}
-
-
-.watch {
-  background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%2C4.5C7%2C4.5%202.73%2C7.61%201%2C12C2.73%2C16.39%207%2C19.5%2012%2C19.5C12.36%2C19.5%2012.72%2C19.5%2013.08%2C19.45C13.03%2C19.13%2013%2C18.82%2013%2C18.5C13%2C18.14%2013.04%2C17.78%2013.1%2C17.42C12.74%2C17.46%2012.37%2C17.5%2012%2C17.5C8.24%2C17.5%204.83%2C15.36%203.18%2C12C4.83%2C8.64%208.24%2C6.5%2012%2C6.5C15.76%2C6.5%2019.17%2C8.64%2020.82%2C12C20.7%2C12.24%2020.56%2C12.45%2020.43%2C12.68C21.09%2C12.84%2021.72%2C13.11%2022.29%2C13.5C22.56%2C13%2022.8%2C12.5%2023%2C12C21.27%2C7.61%2017%2C4.5%2012%2C4.5M12%2C9A3%2C3%200%200%2C0%209%2C12A3%2C3%200%200%2C0%2012%2C15A3%2C3%200%200%2C0%2015%2C12A3%2C3%200%200%2C0%2012%2C9M18%2C14.5V17.5H15V19.5H18V22.5H20V19.5H23V17.5H20V14.5H18Z%22%20%2F%3E%3C%2Fsvg%3E');
-}
-
-.branch {
-  background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M13%2C14C9.64%2C14%208.54%2C15.35%208.18%2C16.24C9.25%2C16.7%2010%2C17.76%2010%2C19A3%2C3%200%200%2C1%207%2C22A3%2C3%200%200%2C1%204%2C19C4%2C17.69%204.83%2C16.58%206%2C16.17V7.83C4.83%2C7.42%204%2C6.31%204%2C5A3%2C3%200%200%2C1%207%2C2A3%2C3%200%200%2C1%2010%2C5C10%2C6.31%209.17%2C7.42%208%2C7.83V13.12C8.88%2C12.47%2010.16%2C12%2012%2C12C14.67%2C12%2015.56%2C10.66%2015.85%2C9.77C14.77%2C9.32%2014%2C8.25%2014%2C7A3%2C3%200%200%2C1%2017%2C4A3%2C3%200%200%2C1%2020%2C7C20%2C8.34%2019.12%2C9.5%2017.91%2C9.86C17.65%2C11.29%2016.68%2C14%2013%2C14M7%2C18A1%2C1%200%200%2C0%206%2C19A1%2C1%200%200%2C0%207%2C20A1%2C1%200%200%2C0%208%2C19A1%2C1%200%200%2C0%207%2C18M7%2C4A1%2C1%200%200%2C0%206%2C5A1%2C1%200%200%2C0%207%2C6A1%2C1%200%200%2C0%208%2C5A1%2C1%200%200%2C0%207%2C4M17%2C6A1%2C1%200%200%2C0%2016%2C7A1%2C1%200%200%2C0%2017%2C8A1%2C1%200%200%2C0%2018%2C7A1%2C1%200%200%2C0%2017%2C6Z%22%20%2F%3E%3C%2Fsvg%3E');
-}
-
-.greet-user{
-  display: flex;
-  padding-left: 1rem;
-  gap: 2rem;
-}
-
-.greet-user .greet-user-with-name {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 
@@ -158,7 +113,7 @@ body {
   min-width: 0;
   width: 100%;
   border-radius: 9px;
-  height: 2rem;
+  height: 5rem;
   background-color: var(--lightbluegrey);
   border: none;
   padding: 0.2rem 0.4rem;
@@ -181,11 +136,10 @@ body {
 .main-content {
   display: grid;
   grid-template-areas: 
-    "your-projects-label announcements-label"
     "your-projects announcements"
     "your-projects trending";
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 1fr 5fr 3fr; 
+  grid-template-rows: 1fr 1fr; 
   grid-area: main-content;
   padding: 0.8rem;
   background-color: var(--lightbluegrey);
@@ -201,7 +155,8 @@ body {
  .your-projects {
    display: grid;
    grid-area: your-projects;
-   grid-template-rows: 0fr;
+   /* allocate small space for .project-label */
+   grid-template-rows: 0.2fr;
    grid-template-areas: 
     "your-projects-label"
     "project-list";
@@ -220,8 +175,6 @@ body {
 
  .your-projects-label, .announcements-label, .trending {
    align-self: start;
-   padding: 0 1rem;
-
  }
 
 
@@ -252,13 +205,13 @@ body {
  
  .project-actions {
    position: absolute;
-   bottom: 1.5rem;
-   right: 1.5rem;
+   bottom: 1rem;
+   right: 1rem;
  }
  
  .announcements {
    display: grid;
-   grid-template-rows: 0fr;
+   grid-template-rows: 0.2fr;
    grid-area: announcements;
    grid-template-areas:
     "announcements-label"
@@ -270,7 +223,7 @@ body {
 }
 
  ul.announcements-list {
-  
+   padding: 1rem;
   grid-area: announcements-list;
 
   /* multiline with ellipsis */
@@ -286,6 +239,7 @@ body {
  }
 
  ul.announcements-list, ul.trending-list {
+   margin-top: 1rem;
  }
 
  ul.announcements-list li, ul.trending-list li{
@@ -307,12 +261,11 @@ body {
 
  .trending {
    display: grid;
-   grid-template-rows: 0fr;
+   grid-template-rows: 0.2fr;
    grid-area: trending;
    grid-template-areas:
     "trending-label" 
     "trending-list";
-  row-gap: 0.5rem;
  }
 
 .trending .trending-label {
